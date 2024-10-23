@@ -14,8 +14,8 @@ function Header() {
               localStorage.getItem('token') ?
               <>
                 <Link to="/add-product" style={{ marginLeft: '15px' }}>Add Product</Link>
-                <Link href="#features" style={{ marginLeft: '15px' }}>View Product</Link>
-                <Link href="#pricing" style={{ marginLeft: '15px' }}>Add Order</Link>
+                <Link to="/view-product" style={{ marginLeft: '15px' }}>View Product</Link>
+                <Link to="#pricing" style={{ marginLeft: '15px' }}>Add Order</Link>
               </>
               :
               <>
