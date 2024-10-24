@@ -12,6 +12,12 @@ function Login() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if(localStorage.getItem('token')) {
+      localStorage.removeItem('token');
+    }
+  },[])
+
   function handleSubmit(event) {
     event.preventDefault()
     axios.post('auth/login', { email, password })
@@ -33,8 +39,8 @@ function Login() {
   return (
     <div>
       <Header/>
-      <Form onSubmit={handleSubmit}
-        noValidate>
+      <div className="d-flex justify-content-center align-items-center"  style={{ height: '80vh' }}>
+      <Form onSubmit={handleSubmit} className="p-4 shadow rounded" style={{ width: '600px' }}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control  
@@ -59,7 +65,8 @@ function Login() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-    </Form>
+      </Form>
+      </div>
     </div>
   )
 }

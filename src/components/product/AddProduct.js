@@ -16,7 +16,7 @@ function AddProduct() {
 
   useEffect(() => {
     if(!localStorage.getItem('token')) {
-      navigate('/add-product');
+      navigate('/login');
     }
   },[])
 
@@ -47,8 +47,7 @@ function AddProduct() {
     <div className='row'>
       <Header/>
       <div className="d-flex justify-content-center align-items-center"  style={{ height: '80vh' }}>
-
-      <Form onSubmit={handleSubmit} className="p-4 shadow rounded" style={{ width: '600px' }}>
+        <Form onSubmit={handleSubmit} className="p-4 shadow rounded" style={{ width: '600px' }}>
       <Form.Group className="mb-3" controlId="productName">
         <Form.Label>Product Name</Form.Label>
         <Form.Control 
@@ -89,8 +88,8 @@ function AddProduct() {
       <Button variant="primary" type="submit">
         Save
       </Button>
-    </Form>
-    </div>
+        </Form>
+      </div>
     </div>
 
   )
