@@ -22,6 +22,13 @@ function ViewProduct() {
     const [stock_quantity, setQuantity] = useState('');
     const [selectedProductId, setSelectedProductId] = useState(null);
 
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if(!localStorage.getItem('token')) {
+        navigate('/login');
+        }
+    },[])
 
     const handleClose = () => setShow(false);
 
